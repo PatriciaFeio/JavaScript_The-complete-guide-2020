@@ -175,9 +175,44 @@ function healPlayerHandler() {
 }
 
 function printLogFunction() {
-  console.log(battleLog);
-}
+  for (let i = 0; i < 3; i++) {
+    console.log('--------');
+  }
 
+  // do-while loop
+  let j = 0;
+  do {
+    console.log(j);
+    j++;
+  } while (j < 3);
+
+  // while loop
+  /*   let j = 0;
+  while (j < 3) {
+    console.log('------------');
+    j++;
+  } */
+
+  /*  for (let i = 0; i < battleLog.length; i++) {
+    console.log(battleLog[i]);
+  } */
+
+  // managing manually the index
+  /*   let i = 0;
+  for (const logEntry of battleLog) {
+    console.log(logEntry);
+    console.log(i);
+    i++;
+  } */
+  let i = 0;
+  for (const logEntry of battleLog) {
+    console.log(`#${i}`);
+    for (const key in logEntry) {
+      console.log(`${key} => ${logEntry[key]}`);
+    }
+    i++;
+  }
+}
 attackBtn.addEventListener('click', attackHandler);
 strongAttackBtn.addEventListener('click', strongAttackHandler);
 healBtn.addEventListener('click', healPlayerHandler);
